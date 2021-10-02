@@ -1,0 +1,1 @@
+Links: https://spring-projects.ru/guides/convert-jar-to-war-maven/
