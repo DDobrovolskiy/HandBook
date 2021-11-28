@@ -1,8 +1,7 @@
 # HandBook
 A handbook include
 ## Language
-### Java
-*Spring
-### Kotlin
+#### Java
+#### Kotlin
 ## Tech
-### gRPC
+#### gRPC
