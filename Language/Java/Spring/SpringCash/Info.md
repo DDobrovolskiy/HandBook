@@ -23,6 +23,7 @@ public User get(Long id) {
 Links:
 * https://habr.com/ru/post/465667/
 * https://www.baeldung.com/spring-cache-tutorial
+* https://www.baeldung.com/jcache
 
 GitHub:
 * https://github.com/promoscow/cache
