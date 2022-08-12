@@ -9,7 +9,9 @@
 * ```docker exec -it *name* bash``` Запуск процесса внутри контейнера
 * ```docker run -d -p 9999:80 nginx``` Открытие порта внешнего 9999 на внтуренний контенера 80
 * ```docker run -d -v ${PWD}:/usr/share/nginx/html -p 9999:80 nginx``` Подключения тома ${PWD} - путь к локальной папке : /usr/share/nginx/html - путь внутри контейнера
-* 
+
+* ```docker build . -t *my_image*:*teg*``` Создание образа с именем образа и тегом (lates)
+
 * Разбиение на строки
 ``` 
 docker
