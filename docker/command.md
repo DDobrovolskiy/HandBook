@@ -9,8 +9,16 @@
 * ```docker exec -it *name* bash``` Запуск процесса внутри контейнера
 * ```docker run -d -p 9999:80 nginx``` Открытие порта внешнего 9999 на внтуренний контенера 80
 * ```docker run -d -v ${PWD}:/usr/share/nginx/html -p 9999:80 nginx``` Подключения тома ${PWD} - путь к локальной папке : /usr/share/nginx/html - путь внутри контейнера
-
 * ```docker build . -t *my_image*:*teg*``` Создание образа с именем образа и тегом (lates)
+* ```docker exec [options] *container* command [arg...]```  Удаленно выполнить команду в уже зупещенном контейнере;
+* ```docker rename *name* *newname*```  Переименовать контейнер;
+* ```docker cp [options] *name*:src_path dest_path``` Копирование файлов из контейнера на локальную машину;
+* ```docker cp [options] src_path| - *name*:dest_path``` Копирование файлов из локальной машины в контейнер;
+* ```docker pause/unpause *name*``` Пауза / снятие с паузы; 
+* ```docker create [options] *image* [command] [arg...]``` Еще один уровень контейнера из образа;
+* ```docker commit [options] *container* [repository:tag]``` Новый образ из контейра;
+* ```docker diff *container*``` Изменения в контейнере;
+
 
 * Разбиение на строки
 ``` 
