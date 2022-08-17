@@ -29,6 +29,6 @@ run \
 nginx 
 ``` 
 
-https://github.com/bcicen/ctop
-https://github.com/jesseduffield/lazydocker
-https://www.youtube.com/watch?v=4KbL5lbjK-M&list=PLU2ftbIeotGoGFC_2lj-OplT_cItXfu48&index=4&ab_channel=letsCode
+https://github.com/bcicen/ctop  
+https://github.com/jesseduffield/lazydocker  
+https://www.youtube.com/watch?v=4KbL5lbjK-M&list=PLU2ftbIeotGoGFC_2lj-OplT_cItXfu48&index=4&ab_channel=letsCode  
