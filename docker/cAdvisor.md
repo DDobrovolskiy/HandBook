@@ -1,3 +1,4 @@
+```
 sudo docker run \
 --volume=/:/rootfs:ro \
 --volume=/var/run:/var/run:rw \
@@ -7,3 +8,4 @@ sudo docker run \
 --detach=true \
 --name=cadvisor \
 google/cadvisor:latest
+```
