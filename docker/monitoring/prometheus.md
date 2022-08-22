@@ -104,4 +104,12 @@ GF_ SECURITY_ADMIN_USER=admin
 GF_ SECURITY_ADMIN_PASSWORD=admin
 GF_ USER_ALLOW_SIGN_UP=false
 ```
+
+grafana:  
+name: Prometheus;  
+type: Prometheus;  
+URL: http://prometheus:9090;  
+Access: proxy.  
+
+
  
