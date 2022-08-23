@@ -24,7 +24,7 @@
 * ```docker-compose up -d```  запуск в режиме демона  
 * ```docker-compose stop```    для остановки используем  
 * ```docker-compose down```   для остановки с удалением контейнеров   
-* ```docker compose -f docker-compose.db.develop.yml up -d``` для файлов с не штатным названием  
+* ```docker-compose -f docker-compose.db.develop.yml up -d``` для файлов с не штатным названием  
 
 
 * Разбиение на строки
