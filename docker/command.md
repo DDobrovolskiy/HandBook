@@ -19,6 +19,16 @@
 * ```docker commit [options] *container* [repository:tag]``` Новый образ из контейра;
 * ```docker diff *container*``` Изменения в контейнере;
 
+/////////////////  
+запускаем все контейнеры, видим stdout всех контейнеров, а для остановки используем Ctrl+C  
+```docker-compose up```  
+запуск в режиме демона  
+```docker-compose up -d```  
+для остановки используем   
+```docker-compose stop```    
+для остановки с удалением контейнеров   
+```docker-compose down```   
+////////////////    
 
 * Разбиение на строки
 ``` 
