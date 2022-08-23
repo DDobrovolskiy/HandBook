@@ -1,3 +1,4 @@
+#### DOCKER
 * ```docker run *name*```  Запуск с подключением к контейнеру 
 * ```docker -d run *name*``` Запуск без подключением к контейнеру 
 * ```docker run -d --name my_name_nginx *name*``` Запуск без подключением к контейнеру с именем "my_name_nginx"
@@ -18,17 +19,13 @@
 * ```docker create [options] *image* [command] [arg...]``` Еще один уровень контейнера из образа;
 * ```docker commit [options] *container* [repository:tag]``` Новый образ из контейра;
 * ```docker diff *container*``` Изменения в контейнере;
+#### DOCKER COMPOSE
+* ```docker-compose up```  запускаем все контейнеры, видим stdout всех контейнеров, а для остановки используем Ctrl+C 
+* ```docker-compose up -d```  запуск в режиме демона  
+* ```docker-compose stop```    для остановки используем  
+* ```docker-compose down```   для остановки с удалением контейнеров   
+* ```docker compose -f docker-compose.db.develop.yml up -d``` для файлов с не штатным названием  
 
-/////////////////  
-запускаем все контейнеры, видим stdout всех контейнеров, а для остановки используем Ctrl+C  
-```docker-compose up```  
-запуск в режиме демона  
-```docker-compose up -d```  
-для остановки используем   
-```docker-compose stop```    
-для остановки с удалением контейнеров   
-```docker-compose down```   
-////////////////    
 
 * Разбиение на строки
 ``` 
