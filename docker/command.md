@@ -41,3 +41,5 @@ https://github.com/jesseduffield/lazydocker
 https://www.youtube.com/watch?v=4KbL5lbjK-M&list=PLU2ftbIeotGoGFC_2lj-OplT_cItXfu48&index=4&ab_channel=letsCode   
   
 https://github.com/vegasbrianc/prometheus  
+  
+https://vk.com/doc44301783_581522020?hash=lhXYkKrqSZpsZ1IaY0MAZwK4yiFtBn8N6dz7rXf4e5o  
