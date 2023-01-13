@@ -3,6 +3,9 @@
 * https://habr.com/ru/company/flant/blog/333470/
 * https://habr.com/ru/company/vk/blog/648117/
 
+Подсказки в терминал:
+* https://kubernetes.io/ru/docs/reference/kubectl/cheatsheet/
+
 Команды:  
 - kubectl version --short
 - minikube start
