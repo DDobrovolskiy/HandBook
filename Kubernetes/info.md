@@ -41,6 +41,24 @@
 Чтобы включить другие дополнения, выполните команду:
 - $ minikube addons enable <название дополнения>
 
+Поднять kubernetes кластер на KVM:
+- minikube start --driver=kvm2
+
+Поднять kubernetes кластер на VirtualBox:
+- minikube start --vm-driver=virtualbox
+
+Загрузить образ в кластер, причём надо проделать ровно столько раз сколько у вас нод:
+- minikube image load hello-minikube:latest
+
+Открыть dashboard:
+- minikube dashboard
+
+Посмотреть URL для доступа к сервисуhello-minikube :
+- minikube service list
+
+Правда есть одно "но", minikube по умолчанию делает активным свой контекст для kubectl:
+- CURRENT  NAME  CLUSTER  AUTHINFO  NAMESPACE * minikube minikube minikube default
+
 Пример YML (pod.yml):
 ``` yml
 apiVersion: v1
