@@ -39,6 +39,7 @@
 - $ minikube addons enable <название дополнения>
 
 Пример YML (pod.yml):
+``` yml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -49,3 +50,4 @@ spec:
     name: nginx
     ports:
     - containerPort: 80
+```
