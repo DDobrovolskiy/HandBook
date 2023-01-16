@@ -34,3 +34,71 @@ spec:
 - kubectl delete replicaset --all
 
 ##### DEPLOYMENT
+Файл deployment.yml
+``` yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - image: quay.io/testing-farm/nginx:1.12
+          name: nginx
+          ports:
+            - containerPort: 80
+```
+Включить:
+- kubectl apply -f deployment.yml 
+Удалить:
+- kubectl delete deployments.apps --all
+Откатить:
+- kubectl rollout undo deployment my-deployment
+
+##### Resource
+
+Файл deployment.yml
+``` yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 2
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - image: quay.io/testing-farm/nginx:1.12
+          name: nginx
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 100Mi
+            limits:
+              cpu: 100m
+              memory: 100Mi
+```
