@@ -251,3 +251,7 @@ kubectl exec -it my-deployment-557d7d7775-z5wgh -- bash
 cd etc/nginx/conf.d/
 cat default.conf
 ```
+Проброска портов
+``` bash
+kubectl port-forward my-deployment-557d7d7775-z5wgh 8080:80 & curl 127.0.0.1:8080
+```
