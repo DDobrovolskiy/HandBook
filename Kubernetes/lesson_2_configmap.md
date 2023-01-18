@@ -244,7 +244,7 @@ spec:
       volumes:
       - name: config
         configMap:
-          name: my-configmap-mount
+          name: my-configmap
 ```
 ``` bash
 kubectl exec -it my-deployment-557d7d7775-z5wgh -- bash
@@ -255,3 +255,97 @@ cat default.conf
 ``` bash
 kubectl port-forward my-deployment-557d7d7775-z5wgh 8080:80 & curl 127.0.0.1:8080
 ```
+##### DownwardAPI
+deployment.yml:
+``` yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - image: quay.io/testing-farm/nginx:1.12
+          name: nginx
+          env:
+          - name: TEST 
+            value: foo
+          - name: TEST_1
+            valueFrom:
+              secretKeyRef:
+                name: my-name-secret
+                key: dbpassword
+          - name: __NODE_NAME #new ->
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.nodeName
+          - name: __POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: __POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          - name: __POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: __NODE_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.hostIP
+          - name: __POD_SERVICE_ACCOUNT
+            valueFrom:
+              fieldRef:
+                fieldPath: spec.serviceAccountName #new <-
+          envFrom:
+          - configMapRef:
+              name: my-configmap-env
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 100Mi
+            limits:
+              cpu: 100m
+              memory: 100Mi
+          volumeMounts:
+          - name: config
+            mountPath: /etc/nginx/conf.d/
+          - name: podinfo
+            mountPath: /etc/podinfo
+      volumes:
+      - name: config
+        configMap:
+          name: my-configmap
+      - name: podinfo  #new ->
+        downwardAPI:
+          items:
+            - path: "labels"
+              fieldRef:
+                fieldPath: metadata.labels
+            - path: "annotations"
+              fieldRef:
+                fieldPath: metadata.annotations   #new <-
+              
+```
+Расширенная информация о подах
+``` bash
+kubectl get pods -o wide
+```
+
