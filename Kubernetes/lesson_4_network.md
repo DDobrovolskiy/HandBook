@@ -262,3 +262,31 @@ exit
 ```
 
 ###### ingress
+
+host-ingress.yml
+``` yml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress-nginx
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  rules:
+  - host: foo.mydomain.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: my-service
+            port:
+              number: 80
+```
+```bash
+minikube addons enable ingress
+
+cd etc/
+sudo nano hosts    
+```
