@@ -290,3 +290,5 @@ minikube addons enable ingress
 cd etc/
 sudo nano hosts    
 ```
+
+https://kubernetes.io/docs/tasks/access-application-cluster/ingress-minikube/
