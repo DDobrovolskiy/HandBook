@@ -1,3 +1,0 @@
-- minikube addons list
-- minikube addons enable ingress
-- minikube addons enable dashboard
