@@ -1,0 +1,23 @@
+###### JOB
+https://github.com/Slurmio/school-dev-k8s/tree/main/practice/9.oneshot-tasks  
+
+job.yml
+``` yml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: hello
+spec:
+  backoffLimit: 2
+  activeDeadlineSeconds: 60
+  template:
+    spec:
+      containers:
+      - name: hello
+        image: quay.io/prometheus/busybox
+        args:
+        - /bin/sh
+        - -c
+        - date; echo Hello from the Kubernetes cluster
+      restartPolicy: Never
+```
