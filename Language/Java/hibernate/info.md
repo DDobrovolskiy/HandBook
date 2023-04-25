@@ -1,4 +1,5 @@
-https://www.youtube.com/watch?v=b52Qz6qlic0
+https://www.youtube.com/watch?v=b52Qz6qlic0  
+https://www.youtube.com/watch?v=-EpP0Vo63FM  
 
 #### log4j.properties
 
