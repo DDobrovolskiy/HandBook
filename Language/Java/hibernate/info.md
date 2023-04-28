@@ -1,7 +1,8 @@
 https://www.youtube.com/watch?v=b52Qz6qlic0  
 https://www.youtube.com/watch?v=-EpP0Vo63FM  
 #### text
-https://stackoverflow.com/questions/43665090/why-do-we-have-to-use-modifying-annotation-for-queries-in-data-jpa
+https://stackoverflow.com/questions/43665090/why-do-we-have-to-use-modifying-annotation-for-queries-in-data-jpa  
+https://habr.com/ru/articles/265061/
 
 #### log4j.properties
 
