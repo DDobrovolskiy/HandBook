@@ -25,3 +25,21 @@ log4j.append.hb.Threshold=Trace
 <property name="format_sql">true</property>
 <property name="use_sql_comment">true</property>
 ```
+
+#### application.yml
+``` yml
+spring:
+    profiles: develop
+    jpa:
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+        format_sql: true
+        use_sql_comments: true
+        hibernate:
+            show_sql: true
+            format_sql: true
+            use_sql_comments: true
+            ddl-auto: update
+```
