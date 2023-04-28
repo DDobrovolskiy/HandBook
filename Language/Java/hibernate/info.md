@@ -31,20 +31,32 @@ log4j.append.hb.Threshold=Trace
 ``` yml
 spring:
     profiles: develop
-    // либо так
     jpa:
-        show-sql: true
         properties:
             hibernate:
                 format_sql: true
-        format_sql: true
-        use_sql_comments: true
-        // либо так
         hibernate:
-            show_sql: true
-            format_sql: true
-            use_sql_comments: true
             ddl-auto: update
+    reportServer:
+        # Ограничение на кол-во ценников при печати, нужно, чтоб юзеры не положили сервер
+        priceTagLimit: 10000
+        url: ${REPORT_SERVER_URL:http://localhost:8080}
+logging:
+    level:
+        root: info
+        org:
+            springframework:
+                boot: info
+            hibernate:
+                type:
+                    descriptor:
+                        sql:
+                            BasicBinder: ${CLOUD_TEST_HIBERNATE_LOG_LEVEL:trace}
+                SQL: debug
+                orm:
+                    jpa: debug
+                transaction: debug
+                security: error
 ```
 
 #### lifeHack
