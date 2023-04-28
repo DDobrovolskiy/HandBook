@@ -43,3 +43,7 @@ spring:
             use_sql_comments: true
             ddl-auto: update
 ```
+
+#### lifeHack
+- findById - для поиска сущностей;
+- getById - для простановки сущностей;
