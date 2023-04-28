@@ -30,6 +30,7 @@ log4j.append.hb.Threshold=Trace
 ``` yml
 spring:
     profiles: develop
+    // либо так
     jpa:
         show-sql: true
         properties:
@@ -37,6 +38,7 @@ spring:
                 format_sql: true
         format_sql: true
         use_sql_comments: true
+        // либо так
         hibernate:
             show_sql: true
             format_sql: true
@@ -45,5 +47,5 @@ spring:
 ```
 
 #### lifeHack
-- findById - для поиска сущностей;
-- getById - для простановки сущностей;
+- ``` findById ``` - для поиска сущностей;
+- ``` getById ``` - для простановки сущностей;
