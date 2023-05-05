@@ -1,4 +1,6 @@
-https://www.youtube.com/watch?v=Q9UiuHvNTp4
+- https://www.youtube.com/watch?v=Q9UiuHvNTp4  
+- https://habr.com/ru/articles/312248/  
+- 
 #### 1
 ``` java
 @Getter
