@@ -2,6 +2,12 @@
 ``` sql
 SELECT pg_terminate_backend(pid)  FROM  pg_stat_activity WHERE pid <> pg_backend_pid() AND datname = 'CloudBack';
 ```
+#### GIT UTILS
+``` sql
+CREATE EXTENSION IF NOT EXISTS "pgstattuple";
+```
+https://github.com/dataegret/pg-utils
+
 Оптимизирование:
 https://habr.com/ru/articles/488968/  
 https://habr.com/ru/companies/postgrespro/articles/349224/  
