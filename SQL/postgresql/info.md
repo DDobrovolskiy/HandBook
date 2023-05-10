@@ -32,6 +32,14 @@ create index *fk* on *pgconf (fk_id)* where *fk_id* is not null;
 
 select * from pg_stats where tablename = 'form';
 ```
+Описание: https://postgrespro.ru/docs/postgresql/9.5/view-pg-stats
+
+Статистика по запросу
+```sql
+explain(costs off,analyze)
+SELECT * FROM form
+WHERE state = 'DREFT';
+```
 
 ```sql
 SELECT C.oid,C.relfilenode, nspname, relname AS "relation",
