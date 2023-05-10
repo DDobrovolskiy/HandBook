@@ -66,3 +66,4 @@ WHERE nspname NOT IN ('pg_catalog', 'information_schema')
 	AND (I.tablename = 'form' OR C.relname = 'form')
 ORDER BY pg_relation_size(C.oid) DESC;
 ```
+INDEX NULL ^ https://github.com/dataegret/pg-utils/blob/master/sql/indexes_with_nulls.sql
