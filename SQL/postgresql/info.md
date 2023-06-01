@@ -42,6 +42,9 @@ select * from pg_stats where tablename = 'form';
 
 Статистика по запросу
 ```sql
+EXPLAIN ANALYZE
+```
+```sql
 explain(costs off,analyze)
 SELECT * FROM form
 WHERE state = 'DREFT';
@@ -67,3 +70,33 @@ WHERE nspname NOT IN ('pg_catalog', 'information_schema')
 ORDER BY pg_relation_size(C.oid) DESC;
 ```
 INDEX NULL ^ https://github.com/dataegret/pg-utils/blob/master/sql/indexes_with_nulls.sql
+
+****BUFFER CASHE
+https://www.pvsm.ru/postgresql/322444  
+
+```sql
+CREATE EXTENSION pg_buffercache;
+```
+```sql
+SELECT usagecount, count(*)
+FROM pg_buffercache
+GROUP BY usagecount
+ORDER BY usagecount;
+```
+
+Можно посмотреть, какая доля каких таблиц в нашей базе закеширована и насколько активно используются эти данные (под активным использованием в этом запросе понимаются буферы со счетчиком использования больше 3):
+```sql
+SELECT c.relname,
+  count(*) blocks,
+  round( 100.0 * 8192 * count(*) / pg_table_size(c.oid) ) "% of rel",
+  round( 100.0 * 8192 * count(*) FILTER (WHERE b.usagecount > 3) / pg_table_size(c.oid) ) "% hot"
+FROM pg_buffercache b
+  JOIN pg_class c ON pg_relation_filenode(c.oid) = b.relfilenode
+WHERE  b.reldatabase IN (
+         0, (SELECT oid FROM pg_database WHERE datname = current_database())
+       )
+AND    b.usagecount is not null
+GROUP BY c.relname, c.oid
+ORDER BY 2 DESC
+LIMIT 10;
+```
