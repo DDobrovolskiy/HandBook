@@ -1,4 +1,5 @@
 Установка:  
+* https://max-ko.ru/75-ustanovka-minikube.html  
 * https://tproger.ru/articles/kak-ustanovit-kubernetes-s-minikube-na-linux/
 * https://habr.com/ru/company/flant/blog/333470/
 * https://habr.com/ru/company/vk/blog/648117/
